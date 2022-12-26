@@ -1,12 +1,11 @@
-package com.uc.weacare2//package com.uc.weacare2
+package com.uc.weacare2
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Patterns
+import kotlinx.android.synthetic.main.activity_register.*
 //
-//import android.content.Intent
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.util.Patterns
-//import kotlinx.android.synthetic.main.activity_register.*
-//
-//class Register : AppCompatActivity() {
+class Register : AppCompatActivity() {
 ////    private lateinit var user: User
 //    private var position = -1
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +89,7 @@ package com.uc.weacare2//package com.uc.weacare2
 //    }
 //
 //
-//}
+}
 //
 //
 //

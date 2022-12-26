@@ -17,10 +17,6 @@ class Onboarding2 : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-        login_txt.setOnClickListener{
-            val myIntent = Intent(this, Login::class.java).apply {
-            }
-            startActivity(myIntent)
-        }
+
     }
 }

@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         supportActionBar?.hide()
         Handler().postDelayed({
-            val intent = Intent(this@MainActivity,Onboarding1::class.java)
+            val intent = Intent(this@MainActivity, Onboarding1::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         },3000);
     }

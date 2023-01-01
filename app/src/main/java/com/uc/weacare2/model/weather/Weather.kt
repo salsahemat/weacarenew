@@ -1,4 +1,4 @@
-package com.uc.weacare2.Models
+package com.uc.weacare2.model.weather
 
 data class Weather(
     val description: String,

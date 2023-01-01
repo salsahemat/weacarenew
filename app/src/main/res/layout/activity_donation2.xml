@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Donation2">
@@ -19,45 +24,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/price10k_btn"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#246BFD"
+        android:background="@color/thunderstorm"
+        android:textColor="#fff"
         android:text="Rp 10.000,-"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/price20k_btn"
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="68dp"
-        android:backgroundTint="#246BFD"
+        android:background="@color/thunderstorm"
+        android:textColor="#fff"
         android:text="Rp 20.000,-"
         app:layout_constraintStart_toEndOf="@+id/price10k_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/price50k_btn"
         android:layout_width="147dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#246BFD"
+        android:background="@color/thunderstorm"
+        android:textColor="#fff"
         android:text="Rp 50.000,-"
         app:layout_constraintStart_toStartOf="@+id/price10k_btn"
         app:layout_constraintTop_toBottomOf="@+id/price10k_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/price100k_btn"
         android:layout_width="148dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#246BFD"
+        android:background="@color/thunderstorm"
+        android:textColor="#fff"
         android:text="Rp 100.000,-"
         app:layout_constraintEnd_toEndOf="@+id/price20k_btn"
         app:layout_constraintStart_toEndOf="@+id/price50k_btn"
@@ -122,3 +131,4 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

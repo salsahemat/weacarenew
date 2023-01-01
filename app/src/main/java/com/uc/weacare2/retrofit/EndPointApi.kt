@@ -1,28 +1,45 @@
 package com.uc.weacare2.retrofit
-import org.json.JSONObject
-import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import com.uc.weacare2.model.donation.DonationAdd
+import com.uc.weacare2.model.donation.DonationCount
+import com.uc.weacare2.model.user.UserLogin
+import com.uc.weacare2.model.user.UserRegister
+import com.uc.weacare2.model.user.UserUpdate
+import retrofit2.Call
+import retrofit2.http.*
 
 interface EndPointApi {
+    @FormUrlEncoded
+    @POST("register")
+    fun userRegister(
+        @Field("username") username: String,
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): Call<UserRegister>
 
-//@POST("/login")
-//suspend fun  loginUser(
-//    @Body loginDetails: LoginDetail
-//):Response<ApiResponse<LoginResponse>>
-    @GET("/donation")
-    //suspend fun : untk sebuah fungsi yang harus menunggu proses2 lain dan mengembalikan sebuah respond
-    suspend fun getDonation(apiKey: String, language: String, page: Int): Response<JSONObject>
-// data yang dikembalikan dlm bentuk donation
+    @FormUrlEncoded
+    @POST("login")
+    fun userLogin(
+        @Field("username") username: String,
+        @Field("password") password: String
+    ): Call<UserLogin>
 
-//    @GET("movie/{id}")
-    //suspend fun : untk sebuah fungsi yang harus menunggu proses2 lain dan mengembalikan sebuah respond
-//    suspend fun getMovieDetails(
-//        @Path("id") id: Int,
-//        @Query("api_key") apiKey: String
-//    ):Response<MovieDetails>
-//data yang dikembalikan dlm bentuk now playing
+    @FormUrlEncoded
+    @PUT("updateuser")
+    fun userUpdate(
+        @Field("id") id: String,
+        @Field("username") username: String,
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): Call<UserUpdate>
 
+    @GET("/donation/count")
+    fun donationCount(): Call<DonationCount>
+
+    @FormUrlEncoded
+    @POST("donation")
+    fun donationAdd(
+        @Field("payment_method") username: String,
+        @Field("user_donation") password: String
+    ): Call<DonationAdd>
 }
 

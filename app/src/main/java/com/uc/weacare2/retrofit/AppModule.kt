@@ -1,31 +1,32 @@
 package com.uc.weacare2.retrofit
 
-import com.uc.weacare2.helper.Const
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
-@Module
-@InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Singleton
-    @Provides
-    fun getRetrofitServiceInstance(retrofit: Retrofit):
-            EndPointApi{
-        return retrofit.create(EndPointApi::class.java)
-    }
+    var BASE_URL:String="https://e37c-125-166-13-18.ap.ngrok.io/"
+    val endpoint: EndPointApi
+        get() {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
-    @Singleton
-    @Provides
-    fun getRetrofitInstance():Retrofit{
-        return Retrofit.Builder()
-            .baseUrl(Const.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+            return retrofit.create(EndPointApi::class.java)
+
+        }
+
+    private val client: OkHttpClient
+        get() {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+            return OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .build()
+        }
 }

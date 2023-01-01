@@ -1,6 +1,6 @@
 package com.uc.weacare2.Utilites
 
-import com.uc.weacare2.Models.WeatherModel
+import com.uc.weacare2.model.weather.WeatherModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,7 +19,4 @@ interface ApiInterface {
         @Query("q") q:String,
         @Query("APPID") appid:String
     ):Call<WeatherModel>
-
-
-
 }

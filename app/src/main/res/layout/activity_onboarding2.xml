@@ -11,6 +11,7 @@
         android:layout_width="416dp"
         android:layout_height="303dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/whatsapp_image_2022_12_02_at_09_40_47_removebg_preview" />
 
